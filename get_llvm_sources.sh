@@ -56,4 +56,7 @@ mkdir llvm-out-of-tree
 mkdir llvm-oot-install
 
 echo Moving openmp src to oot
-[ ! -d "llvm-out-of-tree/openmp" ] && (mv -v openmp-$VERSION.src llvm-out-of-tree/openmp)
+[ ! -d "llvm-out-of-tree/openmp-$VERSION.src" ] && (mv -v openmp-$VERSION.src llvm-out-of-tree/)
+echo symlink
+cd llvm-out-of-tree
+ln -vsnf ./openmp-$VERSION.src ./openmp
